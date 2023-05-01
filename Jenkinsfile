@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment { 
-        ENV_URL = 'pipeline.com'
+        ENV_URL = "pipelinelearning.com"
     }
     stages{
         stage ('stage -1'){
