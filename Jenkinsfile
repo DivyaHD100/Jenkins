@@ -1,9 +1,12 @@
 pipeline {
     agent any
+    environment { 
+        ENV_URL = 'pipeline.com'
+    }
     stages{
         stage ('stage -1'){
             steps {
-                sh "echo 1st stage"
+                sh "echo 1st stage $ENV_URL"
             }
 
 
