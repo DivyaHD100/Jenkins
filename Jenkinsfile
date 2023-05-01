@@ -2,11 +2,13 @@ pipeline {
     agent any
     environment { 
         ENV_URL = "pipelinelearning.com"
+        SSH_CREDENTIALS = credentials('SSH_CRED')
     }
     stages{
         stage ('stage -1'){
             steps {
                 sh "echo 1st stage $ENV_URL"
+                sh "env"
             }
 
 
