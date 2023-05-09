@@ -5,6 +5,20 @@ pipeline {
         SSH_CREDENTIALS = credentials('SSH_CRED')
     }
     stages{
+                    stage('Parallel ') {
+                    parallel {
+                        stage('In Parallel 1') {
+                            steps {
+                                echo "In Parallel 1"
+                            }
+                        }
+                        stage('In Parallel 2') {
+                            steps {
+                                echo "In Parallel 2"
+                            }
+                        }
+                    }
+                }
         stage ('stage -1'){
             steps {
                 sh "echo 1st stage $ENV_URL"
@@ -14,6 +28,7 @@ pipeline {
 
         }
          stage ('stage -2'){
+             when {branch 'dev'}
             steps {
                 sh "echo 2nd stage"
             }
