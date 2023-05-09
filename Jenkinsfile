@@ -5,14 +5,14 @@ pipeline {
         SSH_CREDENTIALS = credentials('SSH_CRED')
     }
     stages{
-                    stage('Parallel ') {
+                    stage ('Parallel ') {
                     parallel {
-                        stage('In Parallel 1') {
+                        stage ('In Parallel 1') {
                             steps {
                                 echo "In Parallel 1"
                             }
                         }
-                        stage('In Parallel 2') {
+                        stage ('In Parallel 2') {
                             steps {
                                 echo "In Parallel 2"
                             }
