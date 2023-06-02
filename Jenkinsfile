@@ -9,7 +9,7 @@ pipeline {
                     parallel {
                         stage('In Parallel 1') {
                             steps {
-                                sh "cat /home/centos/file.txt"
+                                //sh "cat /home/centos/file.txt"
                                 echo "In Parallel 1"
                             }
                         }
