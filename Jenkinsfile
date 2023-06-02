@@ -1,5 +1,5 @@
 pipeline {
-    agent (label 'ws')
+    agent any
     environment { 
         ENV_URL = "pipelinelearning.com"
         SSH_CREDENTIALS = credentials('SSH_CRED')
