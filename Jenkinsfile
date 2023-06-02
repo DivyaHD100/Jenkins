@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent (label 'ws')
     environment { 
         ENV_URL = "pipelinelearning.com"
         SSH_CREDENTIALS = credentials('SSH_CRED')
@@ -9,6 +9,7 @@ pipeline {
                     parallel {
                         stage('In Parallel 1') {
                             steps {
+                                sh "cat /home/centos/file.txt"
                                 echo "In Parallel 1"
                             }
                         }
